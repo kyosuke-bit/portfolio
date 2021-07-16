@@ -1,0 +1,21 @@
+<table class="table">
+  <p class="h4 mb-4">ユーザー一覧</p>
+  <thead>
+    <tr>
+      <th scope="col">名前</th>
+      <th scope="col">メールアドレス</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <td><%= link_to '詳細', user_path(user), class: "btn btn-primary mr-3" %></td>
+        <td><%= link_to '削除', user, method: :delete, data: { confirm: "ユーザーを削除します。よろしいですか？" }, class: "btn btn-danger" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

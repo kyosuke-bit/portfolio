@@ -1,0 +1,19 @@
+<table class="table">
+  <p class="h4 mb-4">ユーザー詳細</p>
+  <thead>
+    <tr>
+      <th scope="col">名前</th>
+      <th scope="col">メールアドレス</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @user.name %></td>
+      <td><%= @user.email %></td>
+      <td><%= link_to '編集', edit_user_path, class: "btn btn-primary" %></td>
+      <td><%= link_to '削除', @user, method: :delete, data: { confirm: "ユーザーを削除します。よろしいですか？" }, class: "btn btn-danger" %></td>
+    </tr>
+  </tbody>
+</table>
